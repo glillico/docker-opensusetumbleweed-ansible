@@ -27,6 +27,9 @@ rm -f /usr/lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /usr/lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /usr/lib/systemd/system/basic.target.wants/*;
 
+# Upgrade pip.
+RUN pip3 install --upgrade pip
+
 # Install ansible.
 RUN pip3 install ansible
 
