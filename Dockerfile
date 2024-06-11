@@ -27,11 +27,16 @@ rm -f /usr/lib/systemd/system/sockets.target.wants/*udev*; \
 rm -f /usr/lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /usr/lib/systemd/system/basic.target.wants/*;
 
+# Remove python warning file.
+RUN rm -f /usr/lib64/python3.11/EXTERNALLY-MANAGED
+
 # Upgrade pip.
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip \
+&& python3 -m pip cache purge
 
 # Install ansible.
-RUN pip3 install ansible
+RUN pip3 install ansible \
+&& python3 -m pip cache purge
 
 # Create ansible directory and copy ansible inventory file.
 RUN mkdir /etc/ansible
