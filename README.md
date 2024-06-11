@@ -6,7 +6,7 @@ A docker container using openSUSE Tumbleweed with Ansible installed for playbook
 
 ## Tags
 
-  - 'latest'  : Python 3.8.x and the latest stable version of Ansible.
+  - 'latest'  : Python 3.11.x and the latest stable version of Ansible.
 
 ## How To Build
 
